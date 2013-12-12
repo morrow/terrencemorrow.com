@@ -1,0 +1,191 @@
+body {
+  background:#eee;
+  font-family:arial;
+  font-size:12px;
+}
+
+a, a:visited {
+  color:inherit;
+  text-decoration:none;
+  opacity:.8;
+}
+
+a:hover {
+  opacity:10;
+}
+
+.root * {
+  margin:1.5em 1em;
+  display:inline-block;
+}
+
+.root > *, .portfolio > * {
+  display:block;
+  margin-left:0em;
+  margin-top:0em;
+}
+
+.header {
+  margin:0;
+  margin-bottom:0.5em;
+  padding:0;
+}
+
+.header h1 {
+  margin:0;
+}
+
+.header *:before, .header *:after {
+  font-weight:normal;
+  color:#666;
+}
+
+.header .contact {
+  margin-top:0.5em;
+  display:block;
+}
+
+.header .occupation:before { content: "is a "; }
+.header .location:before { content: "located in "; }
+.header .availability:before { content: "I am currently "; }
+.header .email:before { content: " and can be reached at  "; }
+.header .phone:before { content: " or by phone at "; }
+
+.header {
+  margin: 1em 1em 2em 1em;
+}
+
+.header * {
+  margin:0;
+}
+
+.header .intro > *, .header .contact > * {
+  font-weight:bold;
+  margin-left:0.5em;
+  margin-right:0;
+}
+
+.items {
+  vertical-align:top;
+  margin-top:0em;
+  margin-bottom:0em;
+}
+
+.items > * {
+  background:#fff;
+  margin:0em .5em;
+  min-height:55px;
+  max-width:400px;
+  overflow:hidden;
+  vertical-align:top;
+  cursor:pointer;
+  border:1px solid #ccc;
+  -webkit-transition: all .1s ease-out;
+}
+
+.items .image {
+  display:block;
+}
+
+.items > div:hover {
+  border-color:#aaa !important;
+}
+
+.items .website {
+  display:none;
+  margin-right:2em;
+  margin-top:1.9em;
+  text-decoration:underline;
+}
+
+.items > *.expanded {
+  height:auto;
+  border:1px solid #ccc;
+}
+
+.items > * > * {
+  display:none;
+}
+
+.items .image {
+  display:block !important;
+  max-height:150px;
+  max-width:370px;
+  vertical-align:top;
+  margin:.5em;
+}
+
+.items .expanded .image {
+  margin:1.5em auto;
+  margin-bottom: 0em;
+  max-height:300px;
+  padding-bottom:.5em;
+  margin-top:1.5em !important;
+}
+
+.items > *.expanded > * {
+  display:inline-block;
+}
+
+.items .description {
+  margin-top:0em;
+  margin-bottom:0em;
+  padding:2em 1em 2em 1em;
+  border-top:1px dashed #ddd;
+  border-bottom:1px dashed #ddd;
+  cursor:default;
+  line-height:2em;
+}
+
+.category {
+  font-weight:bold;
+  font-size:150%;
+  width:170px;
+  background:#333;
+  color:#eee;
+  text-align:left;
+  vertical-align:top;
+  line-height:1.5em;
+  padding:0.8em 0.5em;
+  margin-top:0em;
+  cursor:pointer;
+}
+
+.category * {
+  margin:0em;
+}
+
+.category .icon {
+  font-family:"Pictos";
+  margin-right:1em;
+  color:#87CCF8;
+}
+
+.category:hover {
+  background:black;
+  color:white;
+}
+
+.items .name {
+  font-weight:bold;
+  font-size:120%;
+  cursor:default;
+}
+
+li {
+  display:block;
+  margin:1em;
+}
+
+.links a {
+  text-align:right;
+  margin:1em;
+  background-repeat:no-repeat;
+  background-position-left:0px;
+  background-position-top:0px;
+  background-size:14px;
+  padding-left:2em;
+}
+
+.links .hnsearch { background-image:url(../images/hnsearch.png); }
+.links .twitter { background-image:url(../images/twitter.png); }
