@@ -20,6 +20,10 @@ f.close
 puts "compiling javascripts"
 `coffee -cbo public/javascripts assets/*.coffee`
 
+# compile scss assets
+puts "compiling stylesheets"
+`sass --update assets:public/stylesheets`
+
 # get access keys from file
 access_key_id = YAML.load_file('secret.yml').fetch('access_key_id')
 secret_access_key = YAML.load_file('secret.yml').fetch('secret_access_key')
@@ -60,7 +64,9 @@ local_files.each do |f| upload(f, "terrencemorrow.com") end
 # delete extra files
 extra_files = remote_files - local_files
 extra_files.each do |f|
-  puts "file #{f.key} found on server but not locally - delete? y/n"
+  filename = f
+  filename = f.key if f.responds_to? :key
+  puts "file #{filename} found on server but not locally - delete? y/n"
   response = gets
   if response.match /y/
     AWS::S3::S3Object.delete(f, "terrencemorrow.com")
