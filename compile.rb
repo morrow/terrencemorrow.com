@@ -9,6 +9,9 @@ require "digest"
 # pretty HTML output
 Slim::Engine.set_default_options :pretty => true
 
+# set bucket
+bucket = "terrencemorrow.com"
+
 # create index file using SLIM for templating
 puts "compiling index file"
 t = Tilt.new "assets/index.slim"
@@ -58,17 +61,15 @@ Dir.chdir "public"
 
 # iterate through local directory and upload each file
 local_files = Dir[File.join('**', '*.*')]
-remote_files = Array(AWS::S3::Bucket.find("terrencemorrow.com")).map! {|o| o.key }
-local_files.each do |f| upload(f, "terrencemorrow.com") end
+remote_files = Array(AWS::S3::Bucket.find(bucket)).map! {|o| o.key }
+local_files.each do |f| upload(f, bucket) end
 
 # delete extra files
 extra_files = remote_files - local_files
 extra_files.each do |f|
-  filename = f
-  filename = f.key if f.responds_to? :key
-  puts "file #{filename} found on server but not locally - delete? y/n"
+  puts "file #{f.to_s} found on server but not locally - delete? y/n"
   response = gets
   if response.match /y/
-    AWS::S3::S3Object.delete(f, "terrencemorrow.com")
+    AWS::S3::S3Object.delete(f, bucket)
  end
 end
