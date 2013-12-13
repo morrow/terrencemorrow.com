@@ -8,7 +8,7 @@ data =
           location: "Seattle, WA"
         contact:
           availability: "available for new projects"
-          "email": "mailto:terrymorrow@gmail.com"
+          "email": "terrymorrow@gmail.com"
           phone: "571-969-1822"
       portfolio:
         work:

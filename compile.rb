@@ -38,30 +38,31 @@ def upload(f, bucket)
   # get local digest
   local_digest = Digest::MD5.hexdigest(File.read(f))
   # check if file exists in s3 bucket
-  if AWS::S3::S3Object.exists?(f.sub("public/", ""), bucket)
+  if AWS::S3::S3Object.exists?(f, bucket)
     # get bucket digest  
-    bucket_digest = AWS::S3::S3Object.find(f.sub("public/", ""), bucket).etag
+    bucket_digest = AWS::S3::S3Object.find(f, bucket).etag
     # don't upload file if digests are equal
     puts "#{f} - up to date"
     return false if local_digest == bucket_digest
   end
-  # upload file
   puts "uploading #{f}"
-  AWS::S3::S3Object.store(f.sub('public/', ''), open(f), bucket, :access => :public_read)
+  AWS::S3::S3Object.store(f, open(f), bucket, :access => :public_read)
 end
 
+# change to public directory
+Dir.chdir "public"
+
 # iterate through local directory and upload each file
-puts "uploading files to S3"
-local_files = Dir[File.join('public', '**', '*.*')]
-remote_files = Array(AWS::S3::Bucket.find("terrencemorrow.com")).map! { |o| "public/#{o.key}" }
+local_files = Dir[File.join('**', '*.*')]
+remote_files = Array(AWS::S3::Bucket.find("terrencemorrow.com")).map! {|o| o.key }
 local_files.each do |f| upload(f, "terrencemorrow.com") end
 
-# optionally delete extra files
+# delete extra files
 extra_files = remote_files - local_files
 extra_files.each do |f|
-  puts "file #{f} found on server but not locally - delete? y/n"
+  puts "file #{f.key} found on server but not locally - delete? y/n"
   response = gets
   if response.match /y/
-    AWS::S3::S3Object.delete(f.sub("public/", ""), "terrencemorrow.com")
+    AWS::S3::S3Object.delete(f, "terrencemorrow.com")
  end
 end
