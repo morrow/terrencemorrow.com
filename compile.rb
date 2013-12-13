@@ -30,6 +30,7 @@ AWS::S3::Base.establish_connection!(
   :secret_access_key => secret_access_key
 )
 
+# set region to west
 AWS::S3::DEFAULT_HOST.replace "s3-us-west-2.amazonaws.com"
 
 # upload to s3
@@ -51,4 +52,16 @@ end
 
 # iterate through local directory and upload each file
 puts "uploading files to S3"
-Dir[File.join('public', '**', '*.*')].each do |f| upload(f, "terrencemorrow.com") end
+local_files = Dir[File.join('public', '**', '*.*')]
+remote_files = Array(AWS::S3::Bucket.find("terrencemorrow.com")).map! { |o| "public/#{o.key}" }
+local_files.each do |f| upload(f, "terrencemorrow.com") end
+
+# optionally delete extra files
+extra_files = remote_files - local_files
+extra_files.each do |f|
+  puts "file #{f} found on server but not locally - delete? y/n"
+  response = gets
+  if response.match /y/
+    AWS::S3::S3Object.delete(f.sub("public/", ""), "terrencemorrow.com")
+ end
+end
