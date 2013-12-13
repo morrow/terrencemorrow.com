@@ -11,3 +11,6 @@ gem "aws"
 
 # sass for stylesheets
 gem "sass"
+
+# colorize for colo-coded output
+gem "colorize"
