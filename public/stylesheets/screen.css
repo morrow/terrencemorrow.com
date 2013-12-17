@@ -17,7 +17,8 @@ h2 {
   font-size: 110%; }
 
 #header {
-  border-bottom: 1px solid #eee; }
+  padding: 0.5em;
+  border-bottom: 1px solid #ddd; }
 
 #header > * {
   display: inline-block;
@@ -27,8 +28,11 @@ h2 {
 #header > *:first-child {
   margin-left: 0em; }
 
-.link:before, .languages:before, .role:before, .description:before {
-  content: " - "; }
+#experience {
+  border-top: 1px solid #ccc;
+  margin-top: 2em; }
+  #experience .link:before, #experience .languages:before, #experience .role:before, #experience .description:before, #experience .github:before {
+    content: " - "; }
 
 #introduction {
   font-size: 12px;
@@ -37,9 +41,6 @@ h2 {
 #main > * {
   margin-top: 1em; }
 
-#experience {
-  margin-top: 2em; }
-
 #contact .label {
-  width: 60px;
+  width: 65px;
   display: inline-block; }
