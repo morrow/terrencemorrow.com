@@ -1,10 +1,8 @@
 body {
   font-family: Consolas, monaco, monospace;
   font-size: 13px;
-  margin: 0.5em 1em; }
-
-pre {
-  margin: 0; }
+  margin: 0.5em 1em;
+  background: #eee; }
 
 h1, h2, h3, h4, h5 {
   font-size: 13px;
@@ -17,29 +15,34 @@ h2 {
   font-size: 110%; }
 
 #header {
-  padding: 0.5em;
-  border-bottom: 1px solid #ddd; }
-
-#header > * {
-  display: inline-block;
-  vertical-align: bottom;
-  margin-left: 2em; }
-
-#header > *:first-child {
-  margin-left: 0em; }
+  padding: 0.5em; }
+  #header > * {
+    display: inline-block;
+    vertical-align: bottom;
+    margin-left: 2em; }
+  #header > *:first-child {
+    margin-left: 0em; }
 
 #experience {
-  border-top: 1px solid #ccc;
-  margin-top: 2em; }
+  margin-top: 2em !important; }
   #experience .link:before, #experience .languages:before, #experience .role:before, #experience .description:before, #experience .github:before {
     content: " - "; }
 
 #introduction {
   font-size: 12px;
-  font-family: verdana; }
+  font-family: verdana;
+  margin-top: 2em !important; }
 
-#main > * {
-  margin-top: 1em; }
+#main {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 1em;
+  margin: 1em auto;
+  max-width: 800px; }
+  #main #introduction, #main #experience {
+    margin-top: 1.5em;
+    padding-top: 0.5em;
+    border-top: 1px solid #ddd; }
 
 #contact .label {
   width: 65px;
