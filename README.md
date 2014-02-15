@@ -5,5 +5,5 @@ Located at: [http://terrencemorrow.com](http://terrencemorrow.com)
 
 **public** contains compiled source files and other public assets (images, fonts)
 
-**compile.rb** compiles the source files and syncs the resulting files to an amazon s3 bucket, checking to ensure the file has changed
+**compile.rb** compiles the source files and **upload.rb** syncs the resulting files to an amazon s3 bucket
 
