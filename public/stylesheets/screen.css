@@ -1,49 +1,100 @@
+@import url(http://fonts.googleapis.com/css?family=Tauri);
 body {
-  font-family: Consolas, monaco, monospace;
-  font-size: 13px;
-  margin: 0.5em 1em;
-  background: #eee; }
+  background: url(/bg.svg);
+  font-family: tauri;
+  font-size: 13px; }
 
 h1, h2, h3, h4, h5 {
-  font-size: 13px;
-  font-family: verdana, arial, sans-serif; }
+  text-shadow: 1px 1px 1px #ddd;
+  font-size: 13px; }
 
 h1 {
-  font-size: 120%; }
+  font-size: 180%; }
 
 h2 {
-  font-size: 110%; }
+  font-size: 160%; }
+
+.title, .location {
+  color: #444; }
+
+.title:before, .location:before {
+  font-family: "pictos";
+  color: #ccc; }
+
+.title:before {
+  content: "O"; }
+
+.location:before {
+  content: "G"; }
+
+.profile img {
+  border-radius: 50px;
+  box-shadow: 2px 2px 4px #ccc; }
 
 #header {
-  padding: 0.5em; }
+  padding: 0.5em 1em; }
   #header > * {
     display: inline-block;
-    vertical-align: bottom;
-    margin-left: 2em; }
+    vertical-align: middle;
+    margin: 0em 2em 0em 0em; }
   #header > *:first-child {
     margin-left: 0em; }
 
 #experience {
-  margin-top: 2em !important; }
+  margin-top: 2em; }
   #experience .link:before, #experience .languages:before, #experience .role:before, #experience .description:before, #experience .github:before {
     content: " - "; }
+  #experience h2 {
+    margin-bottom: 0.5em;
+    font-family: tauri; }
 
-#introduction {
-  font-size: 12px;
-  font-family: verdana;
-  margin-top: 2em !important; }
+#wrap {
+  background: rgba(255, 255, 255, 0.4);
+  padding: 1em;
+  margin: 2em auto;
+  max-width: 800px; }
 
 #main {
-  background: white;
-  border: 1px solid #ddd;
-  padding: 1em;
-  margin: 1em auto;
-  max-width: 800px; }
+  padding: 1em 2em;
+  background: white; }
   #main #introduction, #main #experience {
-    margin-top: 1.5em;
-    padding-top: 0.5em;
     border-top: 1px solid #ddd; }
+  #main #experience {
+    margin-top: 2.5em; }
 
-#contact .label {
-  width: 65px;
-  display: inline-block; }
+#introduction {
+  font-size: 14px;
+  line-height: 2em;
+  padding-top: 1.5em; }
+
+#experience img {
+  width: 200px;
+  max-height: 155px;
+  margin-right: 1em;
+  float: left;
+  border: 1px solid #ccc; }
+
+#experience h3 {
+  display: inline-block;
+  border-bottom: 1px dotted #aaa;
+  padding: 0.2em; }
+
+#experience > div {
+  margin-top: 2em;
+  height: 180px; }
+
+#contact {
+  margin: 1em;
+  text-align: center; }
+  #contact > * {
+    font-size: 18px;
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 2em; }
+    #contact > *:before {
+      position: relative;
+      left: -1em;
+      content: '\2022';
+      color: #ccc; }
+    #contact > *:first-child:before {
+      content: ""; }

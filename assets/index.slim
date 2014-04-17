@@ -7,74 +7,81 @@ html
     link(href="/fonts/pictos/pictos.css" rel="stylesheet")
     link(href="/stylesheets/screen.css" rel="stylesheet")
   body
-    #main
-      #header
-        .profile
-          img(src="https://en.gravatar.com/userimage/20125463/369b08e840b6a8a749d31fa328bb9478.jpg?size=70")
-        h1 Terrence Morrow
-        h3 Web Developer located in Seattle, WA
-      #introduction
-        | Hello! My name is Terry Morrow, and I am a freelance web developer located in Seattle, WA. I have experience developing dynamic web applications using HTML5, CSS3, JavaScript, and Ruby on Rails. I am currently available for new projects, contact me today so we can discuss how I can help you meet your web development goals!
-      #contact
-        h3.email
-          .label Email: 
-          a(href="mailto:terrymorrow@gmail.com") terrymorrow@gmail.com
-        h3.phone
-          .label Phone: 
-          | 571-969-1822        
-        h3.github  
-          .label Github:   
-          a(href="https://github.com/morrow") https://github.com/morrow
-      pre#experience
-        h2 Select development experience:
- 
-        h3 Amanda-Adam.com
-        .link
-          | Link: 
-          a(href="https://wedding.terrencemorrow.com/" target="_blank") https://wedding.terrencemorrow.com/
-        .github
-          | Github: 
-          a(href="https://github.com/morrow/wedding-app") wedding app
-        .languages Languages: Ruby, CoffeeScript, JavaScript, HTML, CSS
-        .role Role: Developer / Designer
-        .description Description: Sole developer/designer on this rails-based web application user to provide wedding information and RSVP management for a wedding. Designed using client input to achieve client’s UX / design goals.
-         
-        h3 HTML5 Canvas-Based Puzzle
-        .link 
-          | Link: 
-          a(href="https://puzzle.terrencemorrow.com/" target="_blank") https://puzzle.terrencemorrow.com
-        .github
-          | Github: 
-          a(href="https://github.com/morrow/puzzle") puzzle
-        .languages Languages: HTML, CSS, JavaScript
-        .role Role: Developer
-        .description Description: I was the sole developer on this project, implementing the client’s design and UX specifications.
-         
-        h3 CSS Reference AJAX Interface
-        .link 
-          | Link: 
-          a(href="http://morrow.github.io/css-reference" target="_blank") http://morrow.github.io/css-reference
-        .languages Languages: HTML, CSS, JavaScript
-        .role Role: Creator / Developer / Designer
-        .description Description: I created this single page application to function as a quick-access AJAX version of the Mozilla Developer Network CSS Reference website.
-        h3 Stylist CSS Authoring Tool
-        .link
-          | Link: 
-          a(href="https://github.com/morrow/stylist" target="_blank") https://github.com/morrow/stylist
-        .github
-          | Github:
-          a(href="https://github.com/morrow/css-reference") css reference
-        .languages Languages: Ruby, CoffeeScript, JavaScript, CSS
-        .role Role: Creator / Developer
-        .description Description: I created this CSS authoring tool to allow for client-side updated to CSS styling of a page. The script sends a request to the server, which determines the appropriate action - add/remove/change a CSS rule to the appropriate stylesheet, then reload stylesheets on the page to show the resulting change.
+    #wrap
+      #main
+        #header
+          .profile
+            img(src="https://secure.gravatar.com/avatar/2bef78f2d06710b60f5244cfdbed1be9?size=70px")
+          h1.name Terrence Morrow
+          .title Full-Stack Web Developer
+          .location Seattle, WA
+        #introduction
+          | Hello! My name is Terry Morrow, and I am a freelance web developer located in Seattle, WA. I have experience developing dynamic web applications using HTML5, CSS3, JavaScript, and Ruby on Rails. I am currently available for new projects, contact me today so we can discuss how I can help you meet your web development goals!
+        #contact
+          .email
+            a(href="mailto:terrymorrow@gmail.com") terrymorrow@gmail.com
+          .phone 571-969-1822        
+          .github
+            a(href="https://github.com/morrow") github.com/morrow
+        pre#experience
+          h2 Select Development Experience
+          .item
+            h3 Amanda-Adam.com
+            img(src="/images/wedding.png")
+            .link
+              | Link: 
+              a(href="https://wedding.terrencemorrow.com/" target="_blank") https://wedding.terrencemorrow.com/
+            .github
+              | Github: 
+              a(href="https://github.com/morrow/wedding-app") wedding app
+            .languages Languages: Ruby, CoffeeScript, JavaScript, HTML, CSS
+            .role Role: Developer / Designer
+            .description Description: Sole developer/designer on this rails-based web application user to provide wedding information and RSVP management for a wedding. Designed using client input to achieve client’s UX / design goals.
 
-        h3 TerrenceMorrow.com
-        .link
-          | Link:
-          a(href="https://terrencemorrow.com" target="_blank") https://terrencemorrow.com
-        .github
-          | Github:
-          a(href="https://github.com/morrow/terrencemorrow.com" target="_blank") terrencemorrow
-        .languages Languages: Ruby, CoffeeScript, JavaScript, HTML, CSS
-        .role Role: Creator / Developer / Designer
-        .description Description: My personal website and portfolio, for which I was the sole developer and designer.
+          .item           
+            h3 HTML5 Canvas-Based Puzzle
+            img(src="/images/puzzle.png")
+            .link 
+              | Link: 
+              a(href="https://puzzle.terrencemorrow.com/" target="_blank") https://puzzle.terrencemorrow.com
+            .github
+              | Github: 
+              a(href="https://github.com/morrow/puzzle") puzzle
+            .languages Languages: HTML, CSS, JavaScript
+            .role Role: Developer
+            .description Description: I was the sole developer on this project, implementing the client’s design and UX specifications.
+             
+          .item
+            h3 CSS Reference AJAX Interface
+            img(src="/images/css.png")
+            .link 
+              | Link: 
+              a(href="http://morrow.github.io/css-reference" target="_blank") http://morrow.github.io/css-reference
+            .languages Languages: HTML, CSS, JavaScript
+            .role Role: Creator / Developer / Designer
+            .description Description: I created this single page application to function as a quick-access AJAX version of the Mozilla Developer Network CSS Reference website.
+          .item
+            h3 Stylist CSS Authoring Tool
+            img(src="/images/stylist.png")
+            .link
+              | Link: 
+              a(href="https://github.com/morrow/stylist" target="_blank") https://github.com/morrow/stylist
+            .github
+              | Github:
+              a(href="https://github.com/morrow/css-reference") css reference
+            .languages Languages: Ruby, CoffeeScript, JavaScript, CSS
+            .role Role: Creator / Developer
+            .description Description: I created this CSS authoring tool to allow for client-side updated to CSS styling of a page. The script sends a request to the server, which determines the appropriate action - add/remove/change a CSS rule to the appropriate stylesheet, then reload stylesheets on the page to show the resulting change.
+
+          .item    
+            h3 TerrenceMorrow.com
+            img(src="/images/recursion.png")
+            .link
+              | Link:
+              a(href="https://terrencemorrow.com" target="_blank") https://terrencemorrow.com
+            .github
+              | Github:
+              a(href="https://github.com/morrow/terrencemorrow.com" target="_blank") terrencemorrow
+            .languages Languages: Ruby, CoffeeScript, JavaScript, HTML, CSS
+            .role Role: Creator / Developer / Designer
+            .description Description: My personal website and portfolio, for which I was the sole developer and designer.

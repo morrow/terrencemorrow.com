@@ -7,10 +7,13 @@ gem "tilt"
 gem "slim"
 
 # aws for connecting to s3
-gem "aws"
+gem "aws-s3"
 
 # sass for stylesheets
 gem "sass"
 
 # colorize for colo-coded output
 gem "colorize"
+
+# sqlite3
+gem "sqlite3"
