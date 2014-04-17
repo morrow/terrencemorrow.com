@@ -4,7 +4,8 @@ require "aws/s3"
 require "yaml"
 require "colorize"
 
-bucket = "dev.terrencemorrow.com" 
+bucket = "staging.terrencemorrow.com" 
+host = "s3-us-west-2.amazonaws.com"
 bucket = ARGV[0] unless ARGV[0].nil?
 
 # get access keys from file
@@ -18,7 +19,7 @@ AWS::S3::Base.establish_connection!(
 )
 
 # set region to west
-AWS::S3::DEFAULT_HOST.replace "s3-us-west-2.amazonaws.com"
+AWS::S3::DEFAULT_HOST.replace host
 
 # upload to s3
 def upload(f, bucket)

@@ -1,0 +1,11 @@
+.profile img {
+  -webkit-transition: all 0.1s ease-out; }
+
+.profile img:hover {
+  -webkit-transform: rotate(-10deg); }
+
+a {
+  -webkit-transition: all 0.1s ease-out; }
+
+a:hover {
+  -webkit-transform: rotate(-5deg); }
